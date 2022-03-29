@@ -1,8 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
 
-import { Sequelize } from "sequelize";
-
 import { config as dotenv } from "dotenv";
 
 import { hello } from "@fullstack-skel/shared";
