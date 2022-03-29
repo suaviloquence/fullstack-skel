@@ -1,11 +1,14 @@
-import { DataTypes, Model, ModelAttributes } from "sequelize";
+import { DataTypes, InitOptions, Model } from "sequelize";
 
-export default class Hello extends Model {
+export class Hello extends Model {
   declare hellos: number;
+}
 
-  static data(): ModelAttributes<Hello> {
-    return {
-      hellos: DataTypes.INTEGER,
-    };
-  }
+export default function initHello(opts: InitOptions) {
+  return Hello.init(
+    {
+      hellos: DataTypes.NUMBER,
+    },
+    opts
+  );
 }
